@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 10px auto;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      color: #2f855a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>New Complaint Registered</h2>
+    <p>A new complaint has been registered with the following details:</p>
+
+    <table>
+      <tr><th>Complaint No</th><td>{{ complaint.complaint_no }}</td></tr>
+      <tr><th>Date</th><td>{{ complaint.date }}</td></tr>
+      <tr><th>Center</th><td>{{ complaint.center }}</td></tr>
+      <tr><th>Area Manager</th><td>{{ complaint.area_manager }}</td></tr>
+      <tr><th>Area Manager Email</th><td>{{ complaint.area_manager_email }}</td></tr>
+      <tr><th>VIN</th><td>{{ complaint.vin }}</td></tr>
+      <tr><th>Phone No</th><td>{{ complaint.tele_no }}</td></tr>
+      <tr><th>Immediate Action</th><td>{{ complaint.immediate_action }}</td></tr>
+      <tr><th>Correct Action</th><td>{{ complaint.correct_action }}</td></tr>
+      <tr><th>Complaint Type</th><td>{{ complaint.complaint_type }}</td></tr>
+      <tr><th>Comment</th><td>{{ complaint.comment|default:"-" }}</td></tr>
+      <tr><th>Status</th><td>{{ complaint.status }}</td></tr>
+      <tr><th>Reporter</th><td>{{ complaint.reporter.get_full_name }}</td></tr>
+    </table>
+
+    <div class="footer">
+      <p>If you have any doubt, feel free to contact the LAUGFS ECO SRI hotline : 0117 770 770</p>
+      <p>© 2025 R &amp; D Department — Tharusha Bimsara</p>
+    </div>
+  </div>
+</body>
+</html>
